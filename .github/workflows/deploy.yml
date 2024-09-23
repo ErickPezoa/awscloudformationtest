@@ -11,7 +11,7 @@ on:
       inputs:
         region:
           description: 'AWS Region'
-          required: true
+          required: false
           default: 'us-east-1'
 
 jobs:
@@ -50,5 +50,5 @@ jobs:
         uses: aws-actions/aws-cloudformation-github-deploy@master
         with:
           name: ${{ steps.env-name.outputs.environment }}-cluster
-          template: dummybucketpezoa1.s3
+          template: dummybucketpezoa.s3
           no-fail-on-empty-changeset: "1"
