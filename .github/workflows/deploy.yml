@@ -35,6 +35,15 @@ jobs:
           aws-secret-access-key: ${{ secrets.ACCESS_KEY_SECRET }}
           aws-region: ${{ github.event.inputs.region}}
 
+      - name: Configure environment name
+        id: env-name
+        env:
+            REPO: ${{ github.repository }}
+        run: |
+            ENVIRONMENT=`echo $REPO | tr "/" "-"`
+            echo "Environment name: $ENVIRONMENT"
+            echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
+  
       # Deploy to AWS CloudFormation
       - name: Deploy S3 bucket
         id: s3-bucket
