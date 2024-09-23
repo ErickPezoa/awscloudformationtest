@@ -50,5 +50,5 @@ jobs:
         uses: aws-actions/aws-cloudformation-github-deploy@master
         with:
           name: ${{ steps.env-name.outputs.environment }}-cluster
-          template: dummybucketpezoa.s3
+          template: dummybucketpezoa1.s3
           no-fail-on-empty-changeset: "1"
