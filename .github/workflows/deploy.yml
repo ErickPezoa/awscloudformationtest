@@ -18,11 +18,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout code from master branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@master
 
       # Configure AWS Credential
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@master
         with:
           aws-access-key-id: ${{ secrets.ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.ACCESS_KEY_SECRET }}
@@ -30,7 +30,7 @@ jobs:
 
       # Deploy to AWS CloudFormation
       - name: Deploy to AWS CloudFormation
-        uses: aws-actions/aws-cloudformation-github-deploy@v4
+        uses: aws-actions/aws-cloudformation-github-deploy@master
         with:
           name: tekloon-test-stack
           template: dummybucketpezoa.s3
