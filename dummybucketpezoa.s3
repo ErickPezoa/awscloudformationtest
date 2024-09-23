@@ -4,7 +4,7 @@
             "Type": "AWS::S3::Bucket",
             "DeletionPolicy": "Retain",
             "Properties": {
-                "BucketName": "DUMMYBUCKETPEZOA"
+                "BucketName": "dummy-bucket-pezoa"
             }
         }
     }
